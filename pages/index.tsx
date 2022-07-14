@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/future/image';
 import { useMemo, useState } from 'react';
 import { mockify } from '../utils';
+import logo from '../public/favicon.png'
 
 const Home: NextPage = () => {
 
@@ -37,7 +38,7 @@ const Home: NextPage = () => {
         <title>{title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <main className="flex flex-col w-[800px] max-w-full m-auto text-center p-3">
