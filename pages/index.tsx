@@ -35,11 +35,12 @@ const Home: NextPage = () => {
     <div>
       <Head>
         <title>{title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col w-[800px] m-auto text-center">
+      <main className="flex flex-col w-[800px] max-w-full m-auto text-center p-3">
         <div className="py-10"></div>
 
         <h1 className="text-6xl mb-6">{title}</h1>
@@ -70,6 +71,7 @@ const Home: NextPage = () => {
               width="300"
               height="0"
               className="m-auto"
+              priority
             />
           </>
         )}
