@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Image from 'next/future/image';
 import { useMemo, useState } from 'react';
 import { mockify } from '../utils';
-import logo from '../public/favicon.png'
 
 const Home: NextPage = () => {
 
@@ -51,8 +50,8 @@ const Home: NextPage = () => {
         <textarea
           placeholder="Insert text here"
           value={text}
-          onChange={(ev) => changeText(ev.target.value)}
           className="mb-6"
+          onChange={(ev) => changeText(ev.target.value)}
         />
 
         {mockified && (
