@@ -1,13 +1,13 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from "next";
+import Head from "next/head";
 import Image from "next/image";
-import { useMemo, useState } from 'react';
-import { mockify } from '../utils';
+import { useMemo, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
+import { mockify } from "../utils";
 
 const Home: NextPage = () => {
-
-  const [ text, changeText ] = useState('')
-  const mockified = useMemo(() => mockify(text), [text])
+  const [text, changeText] = useState("");
+  const mockified = useMemo(() => mockify(text), [text]);
 
   const copyToClipboard = (string: string) => {
     if (!navigator.clipboard) {
@@ -18,18 +18,19 @@ const Home: NextPage = () => {
     try {
       navigator.clipboard.writeText(string);
 
-      const c2cButton = document.getElementById('c2c-button')
-      c2cButton!.innerText = 'Copied to clipboard';
+      const c2cButton = document.getElementById("c2c-button");
+      c2cButton!.innerText = "Copied to clipboard";
       setTimeout(() => {
-        c2cButton!.innerText = 'Click to copy';
+        c2cButton!.innerText = "Click to copy";
       }, 1200);
     } catch (err) {
-      console.error('Failed to copy!', err);
+      console.error("Failed to copy!", err);
     }
-  }
+  };
 
-  const title = 'Mockify'
-  const description = 'Change any text to this mocky upper and lower case thingy'
+  const title = "Mockify";
+  const description =
+    "Change any text to this mocky upper and lower case thingy";
 
   return (
     <div>
@@ -63,7 +64,9 @@ const Home: NextPage = () => {
               id="c2c-button"
               onClick={() => copyToClipboard(mockified)}
               className="rounded border border-white w-fit p-1 m-auto mb-6"
-            >Click to copy</button>
+            >
+              Click to copy
+            </button>
 
             <Image
               src="https://i.giphy.com/media/QUXYcgCwvCm4cKcrI3/giphy.webp"
@@ -76,8 +79,10 @@ const Home: NextPage = () => {
           </>
         )}
       </main>
-    </div>
-  )
-}
 
-export default Home
+      <Analytics />
+    </div>
+  );
+};
+
+export default Home;
