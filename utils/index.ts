@@ -2,8 +2,8 @@ export const mockify = (input: string): string => {
   const chars = input.split("");
 
   let mockifiedChars = [] as string[];
-  let capitalized = false;
-  chars.forEach((c, i) => {
+  let capitalized = true;
+  chars.forEach((c) => {
     // if the character is a space, capitalization is set to true
     if (c === " ") {
       capitalized = true;
