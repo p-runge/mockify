@@ -1,5 +1,5 @@
 export const mockify = (input: string): string => {
-  const chars = input.split("");
+  const chars = input.trim().split("");
 
   let mockifiedChars = [] as string[];
   let capitalized = true;
